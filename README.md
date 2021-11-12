@@ -1,8 +1,7 @@
 # Explore National Parks
-
 View Heroku deployment here: https://sleepy-spire-19842.herokuapp.com/
 
-This web-app allows you to explore search national parks by activity, as well as view webcam images from national parks
+This web-app allows you to explore search national parks by activity, as well as view webcam images from national parks using the national parks API. It uses Ruby on Rails.
 
 ### Home Page
 ![image](https://user-images.githubusercontent.com/42917263/141433799-bb212dcb-0e51-483a-b22b-0967727aec36.png)
