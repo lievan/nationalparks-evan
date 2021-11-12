@@ -3,6 +3,7 @@ module Parks
       def self.by_activity(name)
         puts "printing name"
         puts name
+        puts ENV['API_KEY']
         Faraday.get 'https://developer.nps.gov/api/v1/activities/parks?q=' + name + '&api_key=' + ENV['API_KEY']
       end
       def self.by_park(park)
