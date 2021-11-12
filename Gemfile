@@ -61,3 +61,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #make API calls
 gem 'faraday'
 
+
+gem 'rails_12factor', group: :production
