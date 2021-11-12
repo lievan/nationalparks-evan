@@ -1,8 +1,5 @@
 module Parks
     class Search
-      def self.get_activities()
-        Faraday.get 'https://developer.nps.gov/api/v1/activities?q=H&api_key=' + ENV['API_KEY']
-      end
       def self.by_activity(name)
         Faraday.get 'https://developer.nps.gov/api/v1/activities/parks?q=' + name + '&api_key=' + ENV['API_KEY']
       end

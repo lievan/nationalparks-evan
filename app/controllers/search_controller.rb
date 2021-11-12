@@ -1,7 +1,5 @@
 class SearchController < ApplicationController
   def index
-    @all_activities = Parks::Search.get_activities()
-    @all_activities = JSON.parse(@all_activities.body)['data'][0]
     if params['name']
       @activities = Parks::Search.by_activity(params['name'])
       @activities = JSON.parse(@activities.body)['data'][0]
