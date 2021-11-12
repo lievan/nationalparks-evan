@@ -1,0 +1,63 @@
+
+
+
+<% if @park %>
+  <div class="about-section">
+  <h2> <%= link_to "HOME", root_path, style: 'color:white'%> </h2>
+  <h1> <%= @name%>  </h1>
+
+  <p class='section intro'> <%= @description %> </p>
+  </div>
+
+  <div>
+    <div class='section'>
+    <h2> Activities </h2>
+    <ul class="list">
+    <% @activities.each do |activity| %>
+      <li> <%= link_to activity['name'], search_path(:name => activity['name'])  %> </li>
+    <% end %>
+    </ul>
+    </div>
+
+    <div class='section'>
+    <h2> Weather </h2>
+    <p> <%= @weather %> </p>
+    </div>
+
+    
+    <div class='section'>
+    <h2> Directions </h2>
+    <p> <%= @directions %> </p>
+    </div>
+
+    <div class='section'>
+      <h2> Operating Hours </h2>
+      <% @hours.each do |hour| %>
+        <h4> <%= hour['name'] %></h4>
+        <p> <%= hour['description'] %></p>
+      <% end %>
+    </div>
+
+    <div class='section'>
+      <h2> Addresses </h2>
+      <% @addresses.each do |activity| %>
+        <div><b> <%= activity['type'] %></b> : <%= activity['city'] %> 
+              <%= activity['stateCode'] %> <%= activity['line1'] %></div>
+      <% end %>
+      <h2> Contact info</h2>
+      <% @contacts_phone.each do |contact| %>
+        <div><b> <%= contact['type'] %> </b> : <%= contact['phoneNumber']%></div>
+      <% end %>
+      <% @contacts_email.each do |contact| %>
+        <div> <%= contact['emailAddress']%> <%= contact['description'] %></div>
+      <% end %>
+    </div>
+
+    
+    <h1 style='color: #1375b0'> Pictures <h1>
+    <% @images.each do |image| %>
+        <%= image_tag (image['url']), class: "img" %></div>
+    <% end %>
+
+  </div>
+<% end %>

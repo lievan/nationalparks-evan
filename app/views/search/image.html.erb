@@ -1,0 +1,18 @@
+<h1 style='color: #1375b0'> Webcam Photos <h1>
+<h2> <%= link_to "HOME", root_path%> </h2>
+<div class="gallery">
+<% if @photos.length() > 0 %>
+    <% @photos.each do |image| %>
+        <% if image['images'] %>
+            <% image['images'].each do |pic| %>
+                <h2 style='color: #1375b0'> <%=image['title']%> <h2>
+                <div class="image_container">
+                <div> <%= image_tag (pic['url']), class: "img" %></div>
+                </div>
+            <% end%>
+        <% end%>
+    <% end %>
+<% else %>
+    <h4 style='color: #1375b0'> No results found <h4>
+<%end%>
+</div>

@@ -1,0 +1,23 @@
+
+<h1>Explore National Parks<h1>
+<h4>by Evan Li<h4>
+
+<%= image_tag ('/assets/mountain.jpeg'), class: "icon" %>
+
+<div class='wrap1'>
+<h2>Search national parks by activity</h2>
+<%= form_with(url: search_path, method: "get", local: true, class:'search') do %>
+  <%= text_field_tag :name, '', placeholder: "Try 'Hiking' or 'Swimming'", class:"searchTerm" %>
+  <%= submit_tag("Search",class: 'searchButton') %>
+<% end %>
+</div>
+
+
+
+<div class='wrap2'>
+<h2>Search webcam images from national parks</h2>
+<%= form_with(url: image_path, method: "get", local: true,class:'search') do %>
+  <%= text_field_tag :park, '', placeholder: 'Try "Kennecott Mill and Mt. Blackburn" or "Bluestone National Scenic River"', class:"searchTerm" %>
+  <%= submit_tag("Search",class: 'searchButton') %>
+<% end %>
+</div>
